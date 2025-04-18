@@ -1,0 +1,20 @@
+ Paso 1: Crear la base de datos y tabla en MySQL
+Puedes usar XAMPP, MySQL Workbench o línea de comandos para esto:
+
+sql
+Copiar
+Editar
+CREATE DATABASE prosaber;
+
+USE prosaber;
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    rol VARCHAR(20) NOT NULL -- 'usuario' o 'directivo'
+);
+
+INSERT INTO usuarios (username, password, rol) VALUES
+('admin', '1234', 'directivo'),
+('juan', 'abcd', 'usuario');
